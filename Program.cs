@@ -20,3 +20,11 @@ decimal desconto = cupomDesconto.Trim().Equals("ROCK10", StringComparison.Ordina
     : 0.00m;
 
 decimal valorFinal = custoBruto - desconto;
+
+bool acessoLoungeVip = quantidadeDias > 2 && pontuacaoFidelidade >= 500;
+
+Console.WriteLine();
+Console.WriteLine($"Fa: {nomeFa.ToUpper()}");
+Console.WriteLine($"Valor Bruto: R$ {custoBruto:F2}");
+Console.WriteLine($"Valor Final: R$ {valorFinal:F2}");
+Console.WriteLine($"Acesso ao Lounge VIP: {acessoLoungeVip}");
