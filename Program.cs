@@ -9,3 +9,14 @@ string cupomDesconto = Console.ReadLine() ?? string.Empty;
 
 Console.Write("Pontuacao do Clube de Fidelidade: ");
 int pontuacaoFidelidade = Convert.ToInt32(Console.ReadLine());
+
+const decimal taxaServico = 15.00m;
+const decimal precoPorDia = 120.00m;
+
+decimal custoBruto = taxaServico + (precoPorDia * quantidadeDias);
+
+decimal desconto = cupomDesconto.Trim().Equals("ROCK10", StringComparison.OrdinalIgnoreCase)
+    ? custoBruto * 0.10m
+    : 0.00m;
+
+decimal valorFinal = custoBruto - desconto;
